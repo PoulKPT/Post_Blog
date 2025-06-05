@@ -31,7 +31,6 @@ export const PostsList: React.FC<PostsListProps> = ({ search }) => {
 
   return (
     <div style={{ maxWidth: 1000, margin: '0 auto' }}>
-      {/* Первый пост на всю ширину */}
       <div style={{
         background: '#fff',
         borderRadius: 18,
@@ -60,7 +59,6 @@ export const PostsList: React.FC<PostsListProps> = ({ search }) => {
           </div>
         </div>
       </div>
-      {/* Остальные посты в две колонки */}
       <div style={{
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
