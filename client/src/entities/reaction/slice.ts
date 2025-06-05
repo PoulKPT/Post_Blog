@@ -35,7 +35,6 @@ const reactionSlice = createSlice({
       }
       const prev = state[postId].userReaction;
       if (prev === reaction) {
-        // убираем реакцию
         state[postId].userReaction = undefined;
         state[postId][reaction]--;
       } else {
