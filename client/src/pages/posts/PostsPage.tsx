@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { PostsList } from '../../widgets/PostsList/PostsList';
 import { SearchPost } from '../../features/SearchPost/SearchPost';
 
-export const PostsPage: React.FC = () => {
+export function PostsPage(): React.JSX.Element {
   const [search, setSearch] = useState('');
 
   return (

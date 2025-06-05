@@ -4,7 +4,7 @@ import { fetchPostById } from '../../entities/post/api';
 import type { Post } from '../../entities/post/types';
 import { PostReactions } from '../../widgets/PostReactions/PostReactions';
 
-export const PostPage: React.FC = () => {
+export function PostPage(): React.JSX.Element {
   const { id } = useParams<{ id: string }>();
   const [post, setPost] = useState<Post | null>(null);
   const [loading, setLoading] = useState(true);

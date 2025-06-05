@@ -4,10 +4,10 @@ interface SearchPostProps {
   onSearch: (value: string) => void;
 }
 
-export const SearchPost: React.FC<SearchPostProps> = ({ onSearch }) => {
+export function SearchPost({ onSearch }: SearchPostProps): React.JSX.Element {
   const [value, setValue] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent): void => {
     e.preventDefault();
     onSearch(value.trim());
   };

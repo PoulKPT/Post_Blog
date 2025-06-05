@@ -8,7 +8,7 @@ interface PostsListProps {
   search?: string;
 }
 
-export const PostsList: React.FC<PostsListProps> = ({ search }) => {
+export function PostsList({ search }: PostsListProps): React.JSX.Element {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -31,7 +31,6 @@ export const PostsList: React.FC<PostsListProps> = ({ search }) => {
 
   return (
     <div style={{ maxWidth: 1000, margin: '0 auto' }}>
-      {/* Первый пост на всю ширину */}
       <div style={{
         background: '#fff',
         borderRadius: 18,
@@ -60,7 +59,6 @@ export const PostsList: React.FC<PostsListProps> = ({ search }) => {
           </div>
         </div>
       </div>
-      {/* Остальные посты в две колонки */}
       <div style={{
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',

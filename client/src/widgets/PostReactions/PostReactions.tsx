@@ -14,7 +14,7 @@ const reactionIcons: Record<ReactionType, string> = {
   dislike: '👎',
 };
 
-export const PostReactions: React.FC<PostReactionsProps> = ({ postId, compact }) => {
+export function PostReactions({ postId, compact }: PostReactionsProps): React.JSX.Element {
   const dispatch = useDispatch();
   const reaction = useSelector((state: RootState) => state.reaction[postId]);
 
@@ -22,7 +22,7 @@ export const PostReactions: React.FC<PostReactionsProps> = ({ postId, compact })
     dispatch(initReactions([postId]));
   }, [dispatch, postId]);
 
-  if (!reaction) return null;
+  if (!reaction) return <></>;
 
   if (compact) {
     return (

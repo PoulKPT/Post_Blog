@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
 export type ReactionType = 'like' | 'dislike';
 
@@ -10,7 +10,7 @@ export interface ReactionState {
   };
 }
 
-const getRandom = () => Math.floor(Math.random() * 51);
+const getRandom = (): number => Math.floor(Math.random() * 51);
 
 const initialState: ReactionState = {};
 
@@ -35,7 +35,6 @@ const reactionSlice = createSlice({
       }
       const prev = state[postId].userReaction;
       if (prev === reaction) {
-        // убираем реакцию
         state[postId].userReaction = undefined;
         state[postId][reaction]--;
       } else {
